@@ -1,0 +1,218 @@
+@use "../grobal/" as *;
+/*
+  header
+----------------------------------------------- */
+// body.is-drawerActive {
+//   position: fixed;
+// }
+.is-drawerActive .l-header {
+  mix-blend-mode: normal;
+}
+
+.l-header {
+  padding: pxToRem(48px) 0 pxToRem(41px);
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  mix-blend-mode: difference;
+
+  & .l-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+.l-headerTitle {
+  & a {
+    padding: pxToRem(7px) 0;
+    font-size: pxToRem(20px);
+    font-weight: 700;
+    text-decoration: none;
+    // color: $black;
+    color: $white;
+    display: block;
+  }
+}
+.l-grobalNav {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  background-color: $black;
+  color: $white;
+  -webkit-transform: translateY(-130%);
+  -ms-transform: translateY(-130%);
+  transform: translateY(-130%);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 0.04em;
+  &.js-none {
+    display: none;
+  }
+
+  &Links {
+    color: $white;
+    display: block;
+    padding: pxToRem(20px) pxToRem(17px);
+    text-decoration: none;
+    font-size: pxToRem(32px);
+    font-weight: 700;
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    &:hover {
+      background-color: $white;
+      color: $black;
+    }
+  }
+  &Button {
+    width: 148px;
+    margin: 0 auto;
+    padding-top: pxToRem(80px);
+  }
+}
+@include mq($tab) {
+  .l-grobalNav {
+    position: static;
+
+    min-height: auto;
+    background-color: transparent;
+    color: $white;
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+    &Item + .l-grobalNavItem {
+      margin-top: pxToRem(0px);
+      margin-left: pxToRem(24px);
+    }
+    &Links {
+      // color: $white;
+      color: $white;
+      padding: pxToRem(16px) 0;
+      font-size: pxToRem(16px);
+    }
+    &Button {
+      padding-top: pxToRem(0px);
+      margin-left: pxToRem(24px);
+    }
+  }
+  .l-headerTitle {
+    & a {
+      font-size: pxToRem(32px);
+      padding: pxToRem(8px) 0;
+    }
+  }
+}
+@include mq($pc) {
+  .l-header .l-flex {
+    // margin: 0 calc(50% - 50vw);
+  }
+  .l-grobalNavLinks {
+    color: $white;
+  }
+}
+
+.c-button__hamburger {
+  position: relative;
+  border: 2px solid $white;
+  width: 34px;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.c-hamburger {
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background-color: $white;
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    background-color: $white;
+    width: 18px;
+    height: 2px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  &:before {
+    top: 5px;
+  }
+  &:after {
+    top: -5px;
+  }
+}
+.is-drawerActive {
+  & .l-header {
+    // transition: background-color 0.3s ease-in-out;
+    background-color: $black;
+  }
+  & .l-headerTitle {
+    & a {
+      color: $white;
+    }
+  }
+  & .c-button__hamburger {
+    border-color: $white;
+  }
+  & .c-hamburger {
+    background-color: transparent;
+    &:before,
+    &:after {
+      background-color: $white;
+    }
+    &:before {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 0;
+    }
+    &:after {
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      top: 0;
+    }
+  }
+  & .l-grobalNav {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    top: 122px;
+    // left: 0;
+    // right: 0;
+  }
+}
+@include mq($tab) {
+  .c-button__hamburger {
+    display: none;
+  }
+}

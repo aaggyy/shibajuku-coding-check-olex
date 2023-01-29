@@ -1,0 +1,39 @@
+// background-color
+$black: #101010;
+$white: #fff;
+$gray: #fafafa;
+$gray-1: #efefef;
+$gray-2: #f0f0f0;
+
+$content-width: 1199px;
+
+/* メディア　クエリ*/
+@mixin mq($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+/* ブレークポイントの設定*/
+$tab: 768px;
+$pc: 1024px;
+
+@mixin animation(
+  $name,
+  $duration: 1s,
+  $timing-function: ease-in,
+  $delay: 0s,
+  $iteration-count: 1,
+  $direction: normal,
+  $fill-mode: forwards
+) {
+  animation: {
+    name: $name;
+    duration: $duration;
+    timing-function: $timing-function;
+    delay: $delay;
+    iteration-count: $iteration-count;
+    direction: $direction;
+    fill-mode: $fill-mode;
+  }
+}
