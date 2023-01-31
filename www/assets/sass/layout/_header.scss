@@ -1,10 +1,11 @@
 @use "../grobal/" as *;
+/* ===============================================
+header
+=============================================== */
+
 /*
   header
 ----------------------------------------------- */
-// body.is-drawerActive {
-//   position: fixed;
-// }
 .is-drawerActive .l-header {
   mix-blend-mode: normal;
 }
@@ -84,7 +85,6 @@
 @include mq($tab) {
   .l-grobalNav {
     position: static;
-
     min-height: auto;
     background-color: transparent;
     color: $white;
@@ -101,7 +101,6 @@
       margin-left: pxToRem(24px);
     }
     &Links {
-      // color: $white;
       color: $white;
       padding: pxToRem(16px) 0;
       font-size: pxToRem(16px);
@@ -120,7 +119,6 @@
 }
 @include mq($pc) {
   .l-header .l-flex {
-    // margin: 0 calc(50% - 50vw);
   }
   .l-grobalNavLinks {
     color: $white;
@@ -172,7 +170,6 @@
 }
 .is-drawerActive {
   & .l-header {
-    // transition: background-color 0.3s ease-in-out;
     background-color: $black;
   }
   & .l-headerTitle {
@@ -207,8 +204,6 @@
     -ms-transform: translateY(0);
     transform: translateY(0);
     top: 122px;
-    // left: 0;
-    // right: 0;
   }
 }
 @include mq($tab) {

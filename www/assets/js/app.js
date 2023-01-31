@@ -37,7 +37,6 @@ const appearItems = document.querySelectorAll(".appear");
 const cb = function (entries, observer) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // console.log("はいった");
       entry.target.classList.add("inview"); //各要素を監視し、クラス付与
       //ここをforEachで回して各要素にクラスを付与するコードを書くと、
       //要素を感知した瞬間、全ての要素にクラスを付与してしまう。
@@ -69,12 +68,21 @@ heroTitleItems.forEach((elem) => {
   io.observe(elem);
 });
 
-const footerText = document.querySelector(".js-footerText");
-const footerStr = footerText.textContent.split("");
-let concatStr = "";
-for (let c of footerStr) {
-  concatStr += `<span class="char">${c}</span>`;
-}
-// console.log(concatStr);
-footerText.innerHTML = concatStr;
-io.observe(footerText);
+const footerTextItems = document.querySelectorAll(".js-footerTextItem");
+footerTextItems.forEach((elem) => {
+  const str = elem.textContent.split("");
+  let concatStr = "";
+  for (let c of str) {
+    concatStr += `<span class="char">${c}</span>`;
+  }
+  elem.innerHTML = concatStr;
+  io.observe(elem);
+});
+// const footerStr = footerText.textContent.split("");
+// let concatStr = "";
+// for (let c of footerStr) {
+//   concatStr += `<span class="char">${c}</span>`;
+// }
+// // console.log(concatStr);
+// footerText.innerHTML = concatStr;
+// io.observe(footerText);
