@@ -71,6 +71,8 @@ header
     -webkit-transition: all 0.3s ease-in;
     -o-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
+    position: relative;
+
     &:hover {
       background-color: $white;
       color: $black;
@@ -104,6 +106,26 @@ header
       color: $white;
       padding: pxToRem(16px) 0;
       font-size: pxToRem(16px);
+      &::after {
+        position: absolute;
+        content: "";
+        width: 0%;
+        height: 2px;
+        background-color: #fff;
+        left: 0;
+        bottom: 0;
+        -webkit-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+      }
+      &:hover {
+        background-color: transparent;
+        color: $white;
+        border-color: #fff;
+        &::after {
+          width: 100%;
+        }
+      }
     }
     &Button {
       padding-top: pxToRem(0px);

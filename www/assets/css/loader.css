@@ -152,6 +152,7 @@ html {
   font-size: medium;
   font-family: "Montserrat", -apple-system, system-ui, "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, sans-serif; /* 適宜修正*/
   line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
 html *,

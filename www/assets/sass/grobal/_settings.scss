@@ -18,6 +18,13 @@ $content-width: 1199px;
 $tab: 768px;
 $pc: 1024px;
 
+$pattern: (
+  "up": translateY(6px),
+  "down": translateY(-6px),
+  "left": translateX(40px),
+  "right": translateX(-40px),
+);
+
 @mixin animation(
   $name,
   $duration: 1s,

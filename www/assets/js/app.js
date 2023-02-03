@@ -56,28 +56,50 @@ appearItems.forEach((appearItem) => {
   io.observe(appearItem);
 });
 
-//heroTitleを１文字ずつ分割
-const heroTitleItems = document.querySelectorAll(".js-heroTitle");
-heroTitleItems.forEach((elem) => {
-  const str = elem.textContent.split("");
-  let concatStr = "";
-  for (let c of str) {
-    concatStr += `<span class="char">${c}</span>`;
-  }
-  elem.innerHTML = concatStr;
-  io.observe(elem);
-});
+//文字アニメーション関数
+function strAnimation(target) {
+  const elems = document.querySelectorAll(target);
+  elems.forEach((elem) => {
+    const str = elem.textContent.split("");
+    let concatStr = "";
+    for (let c of str) {
+      concatStr += `<span class="char">${c}</span>`;
+    }
+    elem.innerHTML = concatStr;
+    io.observe(elem);
+  });
+}
 
-const footerTextItems = document.querySelectorAll(".js-footerTextItem");
-footerTextItems.forEach((elem) => {
-  const str = elem.textContent.split("");
-  let concatStr = "";
-  for (let c of str) {
-    concatStr += `<span class="char">${c}</span>`;
-  }
-  elem.innerHTML = concatStr;
-  io.observe(elem);
-});
+strAnimation(".js-heroTitle");
+strAnimation(".js-headingTitle");
+strAnimation(".js-footerTextItem");
+
+// 写真アニメーション関数
+function imgAnimation(target) {
+  const elems = document.querySelectorAll(target);
+  elems.forEach((elem) => {
+    io.observe(elem);
+  });
+}
+
+imgAnimation(".js-heroImages");
+imgAnimation(".js-sectionImage");
+//heroImageを一つずつ表示
+// const heroImages = document.querySelectorAll(".js-heroImages");
+// heroImages.forEach((elem) => {
+//   io.observe(elem);
+// });
+
+// const footerTextItems = document.querySelectorAll(".js-footerTextItem");
+// footerTextItems.forEach((elem) => {
+//   const str = elem.textContent.split("");
+//   let concatStr = "";
+//   for (let c of str) {
+//     concatStr += `<span class="char">${c}</span>`;
+//   }
+//   elem.innerHTML = concatStr;
+//   io.observe(elem);
+// });
 // const footerStr = footerText.textContent.split("");
 // let concatStr = "";
 // for (let c of footerStr) {
