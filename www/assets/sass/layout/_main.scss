@@ -9,7 +9,11 @@ main
 .l-main {
   padding-top: pxToRem(123px);
   background-color: $white;
+  // overflow: hidden; これはNG stickyが消える
 }
+// .l-test {
+//   overflow: hidden;
+// }
 .headingTitle {
   font-size: pxToRem(32px);
   font-weight: 700;
@@ -63,7 +67,9 @@ main
 /*
   hero
 ----------------------------------------------- */
-
+.l-heroWrapp {
+  overflow: hidden;
+}
 .l-heroLeft {
   padding-bottom: pxToRem(108px);
 }
@@ -249,6 +255,7 @@ main
 .l-section {
   &.-overview {
     padding: pxToRem(95px) 0 pxToRem(64px);
+    overflow: hidden;
   }
   &.-bgGray {
     background-color: $gray;

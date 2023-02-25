@@ -513,6 +513,10 @@ main
 /*
   hero
 ----------------------------------------------- */
+.l-heroWrapp {
+  overflow: hidden;
+}
+
 .l-heroLeft {
   padding-bottom: 6.75rem;
 }
@@ -753,6 +757,7 @@ main
 ----------------------------------------------- */
 .l-section.-overview {
   padding: 5.9375rem 0 4rem;
+  overflow: hidden;
 }
 .l-section.-bgGray {
   background-color: #fafafa;
